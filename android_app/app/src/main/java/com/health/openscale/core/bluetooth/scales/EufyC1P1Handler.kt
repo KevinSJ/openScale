@@ -1,6 +1,6 @@
 /*
  * openScale
- * Copyright (C) 2025 olie.xdev <olie.xdeveloper@googlemail.com>
+ * Copyright (C) 2026 olie.xdev <olie.xdeveloper@googlemail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,12 @@ import java.util.UUID
 import kotlin.math.max
 
 /**
- * OneByone (classic) handler (Service 0xFFF0, notify on 0xFFF4, write cmds on 0xFFF1).
+ * Eufy C1/P1 handler (Service 0xFFF0, notify on 0xFFF4, write cmds on 0xFFF1).
+ * This handler is mostly a copy of OneByone (classic) handler
+ * (com/health/openscale/core/bluetooth/scales/OneByoneHandler.kt)
+ * because they share the same protocol as documented below.
+ *
+ * The only differences are the device name matching and adding of battery service
  *
  * Protocol summary (based on legacy driver behavior):
  * - Subscribe NOTIFY on 0xFFF4.
